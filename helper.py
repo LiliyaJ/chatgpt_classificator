@@ -56,5 +56,6 @@ def get_class(url):
     )
     return response.choices[0].message.content
 
-url = 'https://www.more-fire.com/blog/strukturierte-daten-guide/'
-print(get_class(url))
+#for local debugging
+#url = 'https://www.more-fire.com/blog/strukturierte-daten-guide/'
+#print(get_class(url))
