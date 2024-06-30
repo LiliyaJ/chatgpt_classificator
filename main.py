@@ -9,7 +9,7 @@ def main(request):
 
      # get the string variable passed by the user
     request_json = request.get_json()
-    calls = request_json['calls']
+    calls = request_json['calls'][0]
     replies = []
 
     for call in calls:
