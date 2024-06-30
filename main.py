@@ -10,12 +10,14 @@ def main(request):
      # get the string variable passed by the user
     request_json = request.get_json()
     url = request_json['calls'][0][0]
+    replies = []
     
     #get class
-    result = get_class(url)
+    replies.append(get_class(url))
 
     #return result
     return json.dumps({
         # each reply is a STRING (JSON not currently supported)
-        'replies': result})
+        'replies': [json.dumps(reply) for reply in replies]
+      })
 
