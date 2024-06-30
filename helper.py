@@ -9,7 +9,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 
 from openai import OpenAI
-client = OpenAI()
+clientAI = OpenAI()
 
 def scrap_and_clean(url):
     '''  
@@ -40,3 +40,21 @@ def scrap_and_clean(url):
     #return string with the text
     return ' '.join(soup.stripped_strings)
 
+def get_class(url):
+    message = scrap_and_clean(url)
+
+    promt = f"""Classify the following text as SEO, SEA or Web Analytics. No further options are available.
+    Message: '{message}'.
+    The output can only conatin one of these words.
+    Do not include any further information into the output.
+    """
+
+    response = clientAI.chat.completions.create(
+        model = "gpt-3.5-turbo",
+        temperature=0.0,
+        messages=[{"role": "user", "content": promt}]
+    )
+    return response.choices[0].message.content
+
+url = 'https://www.more-fire.com/blog/strukturierte-daten-guide/'
+print(get_class(url))
