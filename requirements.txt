@@ -1,5 +1,4 @@
 flask
-os
 functions-framework==3.*
 pandas
 bs4
