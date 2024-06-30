@@ -9,11 +9,14 @@ def main(request):
 
      # get the string variable passed by the user
     request_json = request.get_json()
-    url = request_json['calls'][0][0]
+    calls = request_json['calls']
     replies = []
-    
-    #get class
-    replies.append(get_class(url))
+
+    for call in calls:
+        result = get_class(call)
+        #get class
+        replies.append(result)
+   
 
     #return result
     return json.dumps({
