@@ -7,8 +7,9 @@ import functions_framework
 def main(request):
 
      # get the string variable passed by the user
-    url = request.args.get('url')
-
+    request_json = request.get_json()
+    url = request_json['calls'][0][0]
+    
     #get class
     result = get_class(url)
 
