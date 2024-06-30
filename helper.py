@@ -5,7 +5,8 @@ from bs4 import BeautifulSoup as bs
 from flask import make_response 
 import os
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+#for local debugging
+#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 from openai import OpenAI
 clientAI = OpenAI()

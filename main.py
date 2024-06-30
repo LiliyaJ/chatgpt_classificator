@@ -1,7 +1,7 @@
 from helper import get_class
 from flask import make_response
 import functions_framework
-from flask import escape
+
 
 @functions_framework.http
 def main(request):
