@@ -9,13 +9,6 @@ def main(request):
      # get the string variable passed by the user
     url = request.args.get('url')
 
-    if request_json and 'url' in request_json:
-        url = request_json['url']
-    elif request_args and 'url' in request_args:
-        url = request_args['url']
-    else:
-        return 'Error: No url provided', 400
-
     #get class
     result = get_class(url)
 
