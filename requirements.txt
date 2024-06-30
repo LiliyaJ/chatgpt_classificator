@@ -3,3 +3,4 @@ functions-framework==3.*
 pandas
 bs4
 openai
+requests
