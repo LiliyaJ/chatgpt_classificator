@@ -7,8 +7,7 @@ import functions_framework
 def main(request):
 
      # get the string variable passed by the user
-    request_json = request.get_json(silent=True)
-    request_args = request.args
+    url = request.args.get('url')
 
     if request_json and 'url' in request_json:
         url = request_json['url']
