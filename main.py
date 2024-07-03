@@ -13,8 +13,12 @@ def main(request):
     replies = []
 
     for call in calls:
+        #get url input
         url = call[0]
-        result = get_class(url)
+        #get classes input
+        classes = call[1]
+
+        result = get_class(url, classes)
         #get class
         replies.append(result)
    

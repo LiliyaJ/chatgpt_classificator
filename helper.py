@@ -40,12 +40,12 @@ def scrap_and_clean(url):
     #return string with the text
     return ' '.join(soup.stripped_strings)
 
-def get_class(url):
+def get_class(url, classes):
     message = scrap_and_clean(url)
 
-    promt = f"""Classify the following text as SEO, SEA or Web Analytics. No further options are available.
+    promt = f"""Classify the following text as {classes}. No further options are available.
     Message: '{message}'.
-    The output can only conatin one of these words.
+    The output can only contain {classes}.
     Do not include any further information into the output.
     """
 
