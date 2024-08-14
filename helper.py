@@ -11,7 +11,7 @@ import os
 from openai import OpenAI
 clientAI = OpenAI()
 
-def scrap_and_clean(url):
+def get_content(url):
     '''  
     FUNCTION:
     Scrapes the text and remove tags    
@@ -41,7 +41,7 @@ def scrap_and_clean(url):
     return ' '.join(soup.stripped_strings)
 
 def get_class(url, classes):
-    message = scrap_and_clean(url)
+    message = get_content(url)
 
     promt = f"""Classify the following text as {classes}. No further options are available.
     Message: '{message}'.
@@ -55,7 +55,3 @@ def get_class(url, classes):
         messages=[{"role": "user", "content": promt}]
     )
     return response.choices[0].message.content
-
-#for local debugging
-#url = 'https://www.more-fire.com/blog/strukturierte-daten-guide/'
-#print(get_class(url))
