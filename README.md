@@ -71,9 +71,9 @@ SELECT
  invoke_function('YOUR_CLOUD_FUNCTION_URL', url, "SEO", "SEA", "Web Analytics") as content_type
 FROM
  `your_project.your_dataset.your_table`
+```
 
 **Explanation**:
+
 - The `invoke_function` placeholder represents the mechanism BigQuery uses to call the Cloud Function. Replace it with the actual method for invoking HTTP functions in BigQuery.
 - The Cloud Function returns the `content_type` based on the provided URL and classes.
-
-```
